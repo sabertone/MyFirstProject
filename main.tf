@@ -11,3 +11,9 @@ resource "google_compute_network" "mfpvpc" {
   mtu                     = 1460
 }
 
+resource "google_compute_subnetwork" "juan" {
+  name          = "lupe"
+  ip_cidr_range = "192.168.169.0/24"
+  network       = google_compute_network.mfpvpc.id
+  
+}
