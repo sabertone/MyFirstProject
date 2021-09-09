@@ -1,8 +1,8 @@
 provider "google" {
-    credentials = "${file("spring-house-324817-6b1d00e5a152.json")}"
-    project = "spring-house-324817"
-    region = "southamerica-east1"
-    zone = "southamerica-east1-a"
+    credentials = file(var.credentials_file)
+    project = var.projec
+    region = var.region
+    zone = var.zone
 }
 
 resource "google_compute_network" "mfpvpc" {
