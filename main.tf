@@ -6,13 +6,13 @@ provider "google" {
 }
 
 resource "google_compute_network" "mfpvpc" {
-  name                    = "sanpablovpc"
+  name                    = "juan_vpc"
   auto_create_subnetworks = false
   mtu                     = 1460
 }
 
 resource "google_compute_subnetwork" "juan" {
-  name          = "lupe"
+  name          = "lupe_net"
   ip_cidr_range = "192.168.169.0/24"
   network       = google_compute_network.mfpvpc.id
   
